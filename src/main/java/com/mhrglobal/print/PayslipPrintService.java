@@ -8,6 +8,12 @@ public class PayslipPrintService implements PrintService {
 
     Logger logger = LoggerFactory.getLogger(PayslipPrintService.class);
 
+    public PayslipPrintService() {}
+
+    public PayslipPrintService(Logger logger) {
+        this.logger = logger;
+    }
+
     @Override
     public void requestPrinting(String role, String BasePay, String Overtime, String Total) {
         //No need to implement
