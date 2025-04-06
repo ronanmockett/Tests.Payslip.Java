@@ -10,9 +10,9 @@ import org.slf4j.LoggerFactory;
 //Implement a Pay Service that makes use of the payment and printing services
 public class PayService {
 
-    Logger logger = LoggerFactory.getLogger(PayService.class);
-    PaymentService bankPaymentService;
-    PrintService paperPrintService;
+    private final Logger logger = LoggerFactory.getLogger(PayService.class);
+    private final PaymentService bankPaymentService;
+    private final PrintService paperPrintService;
 
     public PayService(PaymentService bankPaymentService, PrintService paperPrintService) {
         this.bankPaymentService = bankPaymentService;

@@ -6,8 +6,8 @@ import com.mhrglobal.pay.strategy.EngineerBillingStrategy;
 import com.mhrglobal.pay.strategy.ManagerBillingStrategy;
 
 public class Employee {
-    Role role;
-    BillingStrategy billingStrategy;
+    private final Role role;
+    private final BillingStrategy billingStrategy;
     
     public enum Role {
         Engineer,
@@ -30,13 +30,6 @@ public class Employee {
     }
 
     public float getOvertimeRate() {
-        var hourlyRate = billingStrategy.getHourlyRate();
-        var overtimeRatePercentage = billingStrategy.getOvertimeRatePercentage();
-
-        if ( role.equals(Role.Director) ) {
-            return 0;
-        }
-
-        return (float) (hourlyRate + (hourlyRate * overtimeRatePercentage));
+        return billingStrategy.getOvertimeRate();
     }
 }

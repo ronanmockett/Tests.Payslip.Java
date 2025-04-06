@@ -8,4 +8,9 @@ public class DirectorBillingStrategy implements BillingStrategy {
     public float getHourlyRate() {
         return 7f;
     }
+
+    @Override
+    public float getOvertimeRate() {
+        return 0;
+    }
 }
